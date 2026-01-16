@@ -19,14 +19,11 @@ A powerful symbolic mathematics library for Python.
 
 ## Installation
 
-```bash
-uv add derive
-```
+To install, clone the repository and sync the dependencies:
 
-Or clone and install locally:
 ```bash
-git clone <repo>
-cd mathematicer
+git clone git@github.com:closedform/deriver.git
+cd deriver
 uv sync
 ```
 
