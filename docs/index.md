@@ -101,7 +101,7 @@ Plot(Sin(x), (x, 0, 2*Pi))
 - `ReplaceAll(expr, rules)` - Replace all occurrences
 - `ReplaceRepeated(expr, rules)` - Repeatedly apply rules
 - `Rule(pattern, replacement)` - Create a replacement rule
-- `DefineFunction(name, func)` - Define custom function
+- `DefineFunction(name)` - Define custom function (use `f.define(pattern, replacement)`)
 
 ### Custom Types
 - `DefineType(name, fields)` - Create custom type

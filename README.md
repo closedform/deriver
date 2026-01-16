@@ -39,7 +39,7 @@ x, y = symbols('x y')
 D(Sin(x), x)                    # Differentiation: Cos(x)
 Integrate(x**2, x)              # Integration: x**3/3
 Limit(Sin(x)/x, x, 0)           # Limits: 1
-Series(Exp(x), x, 0, 5)         # Taylor series
+Series(Exp(x), (x, 0, 5))        # Taylor series
 
 # Algebra
 Solve(Eq(x**2 - 4, 0), x)       # Solve equations: [-2, 2]
@@ -107,7 +107,9 @@ Replace(x**2 + y**2, Rule(x**2, a))  # a + y**2
 ReplaceAll(x + x**2 + x**3, Rule(x, 2))  # 2 + 4 + 8
 
 # Define custom functions
-f = DefineFunction('f', lambda x: x**2 + 1)
+x_ = Pattern_('x')
+f = DefineFunction('f')
+f.define(x_, x_**2 + 1)
 f(3)  # 10
 ```
 
@@ -182,14 +184,15 @@ See the `docs/` directory for detailed documentation on:
 
 The `examples/` directory contains interactive Marimo notebooks demonstrating complex use cases:
 
-| Notebook | Description |
-|----------|-------------|
-| `linearized_gravity.py` | Metric perturbations and gravitational waves |
-| `quantum_mechanics.py` | Harmonic oscillator, hydrogen atom, perturbation theory |
-| `classical_mechanics.py` | Lagrangian/Hamiltonian mechanics, Noether's theorem |
-| `electromagnetism.py` | Maxwell equations, gauge theory, EM waves |
-| `differential_geometry.py` | Manifolds, curvature tensors, connections |
-| `renormalization_group.py` | CLT as RG fixed point, universality, beta functions |
+| Notebook | Description | Rendered |
+|----------|-------------|----------|
+| `derive_marimo.py` | Intro notebook for core calculus/plotting | [HTML](examples/rendered/derive_marimo.html) |
+| `linearized_gravity.py` | Metric perturbations and gravitational waves | [HTML](examples/rendered/linearized_gravity.html) |
+| `quantum_mechanics.py` | Harmonic oscillator, hydrogen atom, perturbation theory | [HTML](examples/rendered/quantum_mechanics.html) |
+| `classical_mechanics.py` | Lagrangian/Hamiltonian mechanics, Noether's theorem | [HTML](examples/rendered/classical_mechanics.html) |
+| `electromagnetism.py` | Maxwell equations, gauge theory, EM waves | [HTML](examples/rendered/electromagnetism.html) |
+| `differential_geometry.py` | Manifolds, curvature tensors, connections | [HTML](examples/rendered/differential_geometry.html) |
+| `renormalization_group.py` | CLT as RG fixed point, universality, beta functions | [HTML](examples/rendered/renormalization_group.html) |
 
 The RG notebook demonstrates how the Central Limit Theorem emerges as a renormalization group fixed point, inspired by [The Simplest Renormalization Group](https://dinunno.substack.com/p/the-simplest-renormalization-group).
 
@@ -218,5 +221,17 @@ uv run pytest tests/
 MIT License
 
 ## Acknowledgements
+
+Thanks to the open-source libraries Derive is built on:
+
+- [SymPy](https://www.sympy.org/)
+- [NumPy](https://numpy.org/)
+- [SciPy](https://scipy.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Polars](https://www.pola.rs/)
+- [mpmath](https://mpmath.org/)
+- [Rich](https://rich.readthedocs.io/)
+- [Marimo](https://marimo.io/)
+- [CVXPY](https://www.cvxpy.org/) (optional, for optimization features)
 
 **Note**: This project is the result of a collaboration between Brandon DiNunno, Tom Mainiero, and Claude Code. Any likeness to proprietary APIs is strictly coincidental.

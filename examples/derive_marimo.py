@@ -23,24 +23,27 @@ def __(mo):
 
 
 @app.cell(hide_code=True)
-def __(Symbol, D, Sin, Exp):
+def __(Symbol):
     x = Symbol('x')
-    # Symbolic differentiation
-    D(Sin(x) * Exp(x), x)
     return x,
 
 
 @app.cell(hide_code=True)
-def __(Symbol, Integrate, Exp):
-    x = Symbol('x')
+def __(D, Exp, Sin, x):
+    # Symbolic differentiation
+    D(Sin(x) * Exp(x), x)
+    return
+
+
+@app.cell(hide_code=True)
+def __(Exp, Integrate, x):
     # Integration
     Integrate(x**2 * Exp(-x), x)
     return
 
 
 @app.cell(hide_code=True)
-def __(Symbol, Sin, Cos, Pi, Plot):
-    x = Symbol('x')
+def __(Cos, Pi, Plot, Sin, x):
     # Plotting
     Plot([Sin(x), Cos(x)], (x, 0, 2*Pi))
     return
