@@ -1,0 +1,38 @@
+[project]
+name = "derive"
+version = "0.1.0"
+description = "A powerful symbolic mathematics library for Python"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sympy>=1.13",
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "matplotlib>=3.8",
+    "polars>=0.20",
+    "pytest>=8.0",
+    "mpmath>=1.3",
+    "rich>=13.0",
+    "marimo>=0.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest-cov>=4.1",
+    "ipykernel>=6.29",
+    "jupyter>=1.0",
+]
+optimize = [
+    "cvxpy>=1.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/derive"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
