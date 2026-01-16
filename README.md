@@ -197,9 +197,13 @@ The RG notebook demonstrates how the Central Limit Theorem emerges as a renormal
 
 The example notebooks are written for [Marimo](https://marimo.io/), a reactive Python notebook. Marimo is included as a dependency.
 
+To launch an interactive session for any of the examples:
+
 ```bash
 uv run marimo edit examples/quantum_mechanics.py
 ```
+
+Replace `examples/quantum_mechanics.py` with the path to any other notebook in the `examples/` directory.
 
 Marimo notebooks are pure Python files that can also be imported as modules or run as scripts.
 
