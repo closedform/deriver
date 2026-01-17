@@ -6,12 +6,13 @@ Provides Exp, Log, Ln, Sqrt, and Power functions.
 
 from typing import Any
 from sympy import exp, log, sqrt
+from derive.functions.utils import alias_function
 
 # Direct aliases
-Exp = exp
-Log = log
-Ln = log  # Natural log alias
-Sqrt = sqrt
+Exp = alias_function('Exp', exp)
+Log = alias_function('Log', log)
+Ln = alias_function('Ln', log)  # Natural log alias
+Sqrt = alias_function('Sqrt', sqrt)
 
 
 def Power(base: Any, exponent: Any) -> Any:

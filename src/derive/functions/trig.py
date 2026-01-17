@@ -10,38 +10,39 @@ from sympy import (
     asin, acos, atan, acot, asec, acsc,
     asinh, acosh, atanh, acoth, asech, acsch,
 )
+from derive.functions.utils import alias_function
 
 # Basic trigonometric functions
-Sin = sin
-Cos = cos
-Tan = tan
-Cot = cot
-Sec = sec
-Csc = csc
+Sin = alias_function('Sin', sin)
+Cos = alias_function('Cos', cos)
+Tan = alias_function('Tan', tan)
+Cot = alias_function('Cot', cot)
+Sec = alias_function('Sec', sec)
+Csc = alias_function('Csc', csc)
 
 # Hyperbolic functions
-Sinh = sinh
-Cosh = cosh
-Tanh = tanh
-Coth = coth
-Sech = sech
-Csch = csch
+Sinh = alias_function('Sinh', sinh)
+Cosh = alias_function('Cosh', cosh)
+Tanh = alias_function('Tanh', tanh)
+Coth = alias_function('Coth', coth)
+Sech = alias_function('Sech', sech)
+Csch = alias_function('Csch', csch)
 
 # Inverse trigonometric functions
-ArcSin = asin
-ArcCos = acos
-ArcTan = atan
-ArcCot = acot
-ArcSec = asec
-ArcCsc = acsc
+ArcSin = alias_function('ArcSin', asin)
+ArcCos = alias_function('ArcCos', acos)
+ArcTan = alias_function('ArcTan', atan)
+ArcCot = alias_function('ArcCot', acot)
+ArcSec = alias_function('ArcSec', asec)
+ArcCsc = alias_function('ArcCsc', acsc)
 
 # Inverse hyperbolic functions
-ArcSinh = asinh
-ArcCosh = acosh
-ArcTanh = atanh
-ArcCoth = acoth
-ArcSech = asech
-ArcCsch = acsch
+ArcSinh = alias_function('ArcSinh', asinh)
+ArcCosh = alias_function('ArcCosh', acosh)
+ArcTanh = alias_function('ArcTanh', atanh)
+ArcCoth = alias_function('ArcCoth', acoth)
+ArcSech = alias_function('ArcSech', asech)
+ArcCsch = alias_function('ArcCsch', acsch)
 
 __all__ = [
     # Basic trig

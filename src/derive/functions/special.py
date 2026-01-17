@@ -30,20 +30,21 @@ from sympy import (
     hyper, meijerg,
     sqrt, Rational,
 )
+from derive.functions.utils import alias_function
 
 # Basic special functions
-Factorial = factorial
-Binomial = binomial
-Gamma = gamma
-Beta = beta
+Factorial = alias_function('Factorial', factorial)
+Binomial = alias_function('Binomial', binomial)
+Gamma = alias_function('Gamma', gamma)
+Beta = alias_function('Beta', beta)
 
 # Bessel functions
-BesselJ = besselj
-BesselY = bessely
-BesselI = besseli
-BesselK = besselk
-HankelH1 = hankel1
-HankelH2 = hankel2
+BesselJ = alias_function('BesselJ', besselj)
+BesselY = alias_function('BesselY', bessely)
+BesselI = alias_function('BesselI', besseli)
+BesselK = alias_function('BesselK', besselk)
+HankelH1 = alias_function('HankelH1', hankel1)
+HankelH2 = alias_function('HankelH2', hankel2)
 
 
 def SphericalBesselJ(n: Any, x: Any) -> Any:
@@ -75,50 +76,50 @@ def SphericalBesselY(n: Any, x: Any) -> Any:
 
 
 # Orthogonal polynomials
-LegendreP = legendre
-AssociatedLegendreP = assoc_legendre
-ChebyshevT = chebyshevt
-ChebyshevU = chebyshevu
-HermiteH = hermite
-LaguerreL = laguerre
-AssociatedLaguerreL = assoc_laguerre
-GegenbauerC = gegenbauer
-JacobiP = jacobi
+LegendreP = alias_function('LegendreP', legendre)
+AssociatedLegendreP = alias_function('AssociatedLegendreP', assoc_legendre)
+ChebyshevT = alias_function('ChebyshevT', chebyshevt)
+ChebyshevU = alias_function('ChebyshevU', chebyshevu)
+HermiteH = alias_function('HermiteH', hermite)
+LaguerreL = alias_function('LaguerreL', laguerre)
+AssociatedLaguerreL = alias_function('AssociatedLaguerreL', assoc_laguerre)
+GegenbauerC = alias_function('GegenbauerC', gegenbauer)
+JacobiP = alias_function('JacobiP', jacobi)
 
 # Spherical harmonics
-SphericalHarmonicY = Ynm
+SphericalHarmonicY = alias_function('SphericalHarmonicY', Ynm)
 
 # Elliptic integrals
-EllipticK = elliptic_k
-EllipticE = elliptic_e
-EllipticF = elliptic_f
-EllipticPi = elliptic_pi
+EllipticK = alias_function('EllipticK', elliptic_k)
+EllipticE = alias_function('EllipticE', elliptic_e)
+EllipticF = alias_function('EllipticF', elliptic_f)
+EllipticPi = alias_function('EllipticPi', elliptic_pi)
 
 # Error functions
-Erf = erf
-Erfc = erfc
-Erfi = erfi
+Erf = alias_function('Erf', erf)
+Erfc = alias_function('Erfc', erfc)
+Erfi = alias_function('Erfi', erfi)
 
 # Exponential integrals
-ExpIntegralEi = Ei
-SinIntegral = Si
-CosIntegral = Ci
-LogIntegral = li
+ExpIntegralEi = alias_function('ExpIntegralEi', Ei)
+SinIntegral = alias_function('SinIntegral', Si)
+CosIntegral = alias_function('CosIntegral', Ci)
+LogIntegral = alias_function('LogIntegral', li)
 
 # Fresnel integrals
-FresnelS = fresnels
-FresnelC = fresnelc
+FresnelS = alias_function('FresnelS', fresnels)
+FresnelC = alias_function('FresnelC', fresnelc)
 
 # Airy functions
-AiryAi = airyai
-AiryBi = airybi
+AiryAi = alias_function('AiryAi', airyai)
+AiryBi = alias_function('AiryBi', airybi)
 
 # Zeta and polylog
-Zeta = zeta
-PolyLog = polylog
+Zeta = alias_function('Zeta', zeta)
+PolyLog = alias_function('PolyLog', polylog)
 
 # Hypergeometric functions
-Hypergeometric2F1 = hyper
+Hypergeometric2F1 = alias_function('Hypergeometric2F1', hyper)
 
 
 def HypergeometricPFQ(a_list: List, b_list: List, z: Any) -> Any:

@@ -8,11 +8,12 @@ Sign, Floor, Ceiling, N, Round, Mod, GCD, LCM, PrimeQ, Prime, FactorInteger
 from typing import Any, List, Optional, Literal
 import sympy as sp
 from sympy import sign, floor, ceiling, gcd, lcm, isprime, prime, factorint
+from derive.functions.utils import alias_function
 
 # Direct aliases
-Sign = sign
-Floor = floor
-Ceiling = ceiling
+Sign = alias_function('Sign', sign)
+Floor = alias_function('Floor', floor)
+Ceiling = alias_function('Ceiling', ceiling)
 
 
 def N(
